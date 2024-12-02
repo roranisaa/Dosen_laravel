@@ -14,11 +14,11 @@ class CreateLecturersTable extends Migration
     public function up()
     {
         Schema::create('lecturers', function (Blueprint $table) {
-            $table->id(); // Auto-incrementing ID
-            $table->string('name'); // Name column
-            $table->string('email')->unique(); // Email column (unique constraint)
-            $table->string('phone')->nullable(); // Phone column (nullable)
-            $table->timestamps(); // Created_at and updated_at timestamps
+            $table->id(); // Primary key
+            $table->string('name'); // Lecturer's name
+            $table->string('email')->unique(); // Email, must be unique
+            $table->string('phone')->nullable(); // Phone, can be null
+            $table->timestamps(); // Created_at and updated_at fields
         });
     }
 
